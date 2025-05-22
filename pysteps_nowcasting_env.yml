@@ -1,0 +1,17 @@
+name: pysteps_nowcasting_env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10 # or python=3.11
+  - pysteps
+  - netcdf4
+  - numpy
+  - scipy
+  - matplotlib
+  - opencv
+  - pillow
+  - pyproj
+  - h5py
+  - cartopy
+  - jupyter
