@@ -1,0 +1,41 @@
+[
+  {
+    "test_name": "spectral_fit_repeat",
+    "timestamp": "2026-03-17T04:52:03.256918",
+    "configuration": {},
+    "results": {
+      "time_median_ms": 0.012755393981933594,
+      "time_mean_ms": 0.012993812561035156,
+      "time_std_ms": 0.0007251217997429633,
+      "time_min_ms": 0.01239776611328125,
+      "time_max_ms": 0.014781951904296875,
+      "iterations": 10
+    }
+  },
+  {
+    "test_name": "ar_params_4096",
+    "timestamp": "2026-03-17T04:52:03.727309",
+    "configuration": {},
+    "results": {
+      "time_median_ms": 39.359092712402344,
+      "time_mean_ms": 39.33424949645996,
+      "time_std_ms": 1.285955957718294,
+      "time_min_ms": 36.61537170410156,
+      "time_max_ms": 41.623830795288086,
+      "iterations": 10
+    }
+  },
+  {
+    "test_name": "darts_small",
+    "timestamp": "2026-03-17T04:52:03.730381",
+    "configuration": {},
+    "results": {
+      "time_median_ms": 0.15687942504882812,
+      "time_mean_ms": 0.15816688537597656,
+      "time_std_ms": 0.004117399815544682,
+      "time_min_ms": 0.15282630920410156,
+      "time_max_ms": 0.16570091247558594,
+      "iterations": 10
+    }
+  }
+]

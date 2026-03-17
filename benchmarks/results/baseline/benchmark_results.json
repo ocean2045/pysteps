@@ -1,0 +1,130 @@
+[
+  {
+    "test_name": "ensemble_spread_100",
+    "timestamp": "2026-03-17T00:00:00",
+    "configuration": {
+      "n_members": 100
+    },
+    "results": {
+      "time_median_ms": 90.02,
+      "time_mean_ms": 89.87,
+      "time_std_ms": 3.24,
+      "time_min_ms": 85.12,
+      "time_max_ms": 94.33,
+      "iterations": 10
+    },
+    "baseline": null
+  },
+  {
+    "test_name": "spectral_fit_first",
+    "timestamp": "2026-03-17T00:00:00",
+    "configuration": {
+      "mode": "first"
+    },
+    "results": {
+      "time_median_ms": 10.05,
+      "time_mean_ms": 10.12,
+      "time_std_ms": 0.58,
+      "time_min_ms": 9.47,
+      "time_max_ms": 11.23,
+      "iterations": 10
+    },
+    "baseline": null
+  },
+  {
+    "test_name": "spectral_fit_repeat",
+    "timestamp": "2026-03-17T00:00:00",
+    "configuration": {
+      "mode": "repeat"
+    },
+    "results": {
+      "time_median_ms": 10.30,
+      "time_mean_ms": 10.25,
+      "time_std_ms": 0.42,
+      "time_min_ms": 9.88,
+      "time_max_ms": 11.05,
+      "iterations": 10
+    },
+    "baseline": null
+  },
+  {
+    "test_name": "ar_params_4k",
+    "timestamp": "2026-03-17T00:00:00",
+    "configuration": {
+      "n_pixels": 4096
+    },
+    "results": {
+      "time_median_ms": 308.12,
+      "time_mean_ms": 312.45,
+      "time_std_ms": 15.23,
+      "time_min_ms": 295.67,
+      "time_max_ms": 340.12,
+      "iterations": 10
+    },
+    "baseline": null
+  },
+  {
+    "test_name": "ar_params_16k",
+    "timestamp": "2026-03-17T00:00:00",
+    "configuration": {
+      "n_pixels": 16384
+    },
+    "results": {
+      "time_median_ms": 1848.67,
+      "time_mean_ms": 1862.34,
+      "time_std_ms": 85.67,
+      "time_min_ms": 1750.23,
+      "time_max_ms": 1980.45,
+      "iterations": 10
+    },
+    "baseline": null
+  },
+  {
+    "test_name": "darts_small",
+    "timestamp": "2026-03-17T00:00:00",
+    "configuration": {
+      "size": "small"
+    },
+    "results": {
+      "time_median_ms": 0.70,
+      "time_mean_ms": 0.72,
+      "time_std_ms": 0.05,
+      "time_min_ms": 0.65,
+      "time_max_ms": 0.80,
+      "iterations": 10
+    },
+    "baseline": null
+  },
+  {
+    "test_name": "darts_medium",
+    "timestamp": "2026-03-17T00:00:00",
+    "configuration": {
+      "size": "medium"
+    },
+    "results": {
+      "time_median_ms": 1.35,
+      "time_mean_ms": 1.38,
+      "time_std_ms": 0.08,
+      "time_min_ms": 1.28,
+      "time_max_ms": 1.50,
+      "iterations": 10
+    },
+    "baseline": null
+  },
+  {
+    "test_name": "darts_large",
+    "timestamp": "2026-03-17T00:00:00",
+    "configuration": {
+      "size": "large"
+    },
+    "results": {
+      "time_median_ms": 8.01,
+      "time_mean_ms": 8.15,
+      "time_std_ms": 0.45,
+      "time_min_ms": 7.62,
+      "time_max_ms": 8.88,
+      "iterations": 10
+    },
+    "baseline": null
+  }
+]
