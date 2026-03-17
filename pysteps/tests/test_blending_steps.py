@@ -10,51 +10,71 @@ from pysteps import blending, cascade
 
 # fmt:off
 steps_arg_values = [
-    (1, 3, 4, 8, None, None, False, "spn", True, 4, False, False, 0, False, None, None),
-    (1, 3, 4, 8, "obs", None, False, "spn", True, 4, False, False, 0, False, None, None),
-    (1, 3, 4, 8, "incremental", None, False, "spn", True, 4, False, False, 0, False, None, None),
-    (1, 3, 4, 8, None, "mean", False, "spn", True, 4, False, False, 0, False, None, None),
-    (1, 3, 4, 8, None, "mean", False, "spn", True, 4, False, False, 0, True, None, None),
-    (1, 3, 4, 8, None, "cdf", False, "spn", True, 4, False, False, 0, False, None, None),
-    (1, [1, 2, 3], 4, 8, None, "cdf", False, "spn", True, 4, False, False, 0, False, None, None),
-    (1, 3, 4, 8, "incremental", "cdf", False, "spn", True, 4, False, False, 0, False, None, None),
-    (1, 3, 4, 6, "incremental", "cdf", False, "bps", True, 4, False, False, 0, False, None, None),
-    (1, 3, 4, 6, "incremental", "cdf", False, "bps", False, 4, False, False, 0, False, None, None),
-    (1, 3, 4, 6, "incremental", "cdf", False, "bps", False, 4, False, False, 0, True, None, None),
-    (1, 3, 4, 9, "incremental", "cdf", False, "spn", True, 4, False, False, 0, False, None, None),
-    (2, 3, 10, 8, "incremental", "cdf", False, "spn", True, 10, False, False, 0, False, None, None),
-    (5, 3, 5, 8, "incremental", "cdf", False, "spn", True, 5, False, False, 0, False, None, None),
-    (1, 10, 1, 8, "incremental", "cdf", False, "spn", True, 1, False, False, 0, False, None, None),
-    (2, 3, 2, 8, "incremental", "cdf", True, "spn", True, 2, False, False, 0, False, None, None),
-    (1, 3, 6, 8, None, None, False, "spn", True, 6, False, False, 0, False, None, None),
-    (1, 3, 6, 8, None, None, False, "spn", True, 6, False, False, 0, False, "bps", None),
-    #    Test the case where the radar image contains no rain.
-    (1, 3, 6, 8, None, None, False, "spn", True, 6, True, False, 0, False, None, None),
-    (5, 3, 5, 6, "incremental", "cdf", False, "spn", False, 5, True, False, 0, False, None, None),
-    (5, 3, 5, 6, "incremental", "cdf", False, "spn", False, 5, True, False, 0, True, None, None),
-    #   Test the case where the NWP fields contain no rain.
-    (1, 3, 6, 8, None, None, False, "spn", True, 6, False, True, 0, False, None, None),
-    (5, 3, 5, 6, "incremental", "cdf", False, "spn", False, 5, False, True, 0, True, None, None),
+    (1, 3, 4, 8, 'steps', None, None, False, "spn", True, 4, False, False, 0, False, None, None, None),
+    (1, 3, 4, 8,'steps', "obs", None, False, "spn", True, 4, False, False, 0, False, None, None, None),
+    (1, 3, 4, 8,'steps', "incremental", None, False, "spn", True, 4, False, False, 0, False, None, None, None),
+    (1, 3, 4, 8,'steps', None, "mean", False, "spn", True, 4, False, False, 0, False, None, None, None),
+    (1, 3, 4, 8,'steps', None, "mean", False, "spn", True, 4, False, False, 0, True, None, None, None),
+    (1, 3, 4, 8,'steps', None, "cdf", False, "spn", True, 4, False, False, 0, False, None, None, None),
+    (1, [1, 2, 3], 4, 8,'steps', None, "cdf", False, "spn", True, 4, False, False, 0, False, None, None, None),
+    (1, 3, 4, 8,'steps', "incremental", "cdf", False, "spn", True, 4, False, False, 0, False, None, None, None),
+    (1, 3, 4, 6,'steps', "incremental", "cdf", False, "bps", True, 4, False, False, 0, False, None, None, None),
+    (1, 3, 4, 6,'steps', "incremental", "cdf", False, "bps", False, 4, False, False, 0, False, None, None, None),
+    (1, 3, 4, 6,'steps', "incremental", "cdf", False, "bps", False, 4, False, False, 0, True, None, None, None),
+    (1, 3, 4, 9,'steps', "incremental", "cdf", False, "spn", True, 4, False, False, 0, False, None, None, None),
+    (2, 3, 10, 8,'steps', "incremental", "cdf", False, "spn", True, 10, False, False, 0, False, None, None, None),
+    (5, 3, 5, 8,'steps', "incremental", "cdf", False, "spn", True, 5, False, False, 0, False, None, None, None),
+    (1, 10, 1, 8,'steps', "incremental", "cdf", False, "spn", True, 1, False, False, 0, False, None, None, None),
+    (2, 3, 2, 8,'steps', "incremental", "cdf", True, "spn", True, 2, False, False, 0, False, None, None, None),
+    (1, 3, 6, 8,'steps', None, None, False, "spn", True, 6, False, False, 0, False, None, None, None),
+    (1, 3, 6, 8,'steps', None, None, False, "spn", True, 6, False, False, 0, False, "bps", None, None),
+    # Test the case where the radar image contains no rain.
+    (1, 3, 6, 8,'steps', None, None, False, "spn", True, 6, True, False, 0, False, None, None, None),
+    (5, 3, 5, 6,'steps', "incremental", "cdf", False, "spn", False, 5, True, False, 0, False, None, None, None),
+    (5, 3, 5, 6,'steps', "incremental", "cdf", False, "spn", False, 5, True, False, 0, True, None, None, None),
+    # Test the case where the NWP fields contain no rain.
+    (1, 3, 6, 8,'steps', None, None, False, "spn", True, 6, False, True, 0, False, None, None, None),
+    (5, 3, 5, 6,'steps', "incremental", "cdf", False, "spn", False, 5, False, True, 0, True, None, None, None),
     # Test the case where both the radar image and the NWP fields contain no rain.
-    (1, 3, 6, 8, None, None, False, "spn", True, 6, True, True, 0, False, None, None),
-    (5, 3, 5, 6, "incremental", "cdf", False, "spn", False, 5, True, True, 0, False, None, None),
-    (5, 3, 5, 6, "obs", "mean", True, "spn", True, 5, True, True, 0, False, None, None),
+    (1, 3, 6, 8,'steps', None, None, False, "spn", True, 6, True, True, 0, False, None, None, None),
+    (5, 3, 5, 6,'steps', "incremental", "cdf", False, "spn", False, 5, True, True, 0, False, None, None, None),
+    (5, 3, 5, 6,'steps', "obs", "mean", True, "spn", True, 5, True, True, 0, False, None, None, None),
+    # Test cases where we apply timestep_start_full_nwp_weight
+    (1, 10, 2, 6,'steps', "incremental", "cdf", False, "bps", False, 2, False, False, 0, True, None, None, 5),
+    (1, 10, 2, 6,'steps', "incremental", "cdf", False, "spn", False, 2, False, False, 0, False, None, None, 5),
     # Test for smooth radar mask
-    (1, 3, 6, 8, None, None, False, "spn", True, 6, False, False, 80, False, None, None),
-    (5, 3, 5, 6, "incremental", "cdf", False, "spn", False, 5, False, False, 80, False, None, None),
-    (5, 3, 5, 6, "obs", "mean", False, "spn", False, 5, False, False, 80, False, None, None),
-    (1, 3, 6, 8, None, None, False, "spn", True, 6, False, True, 80, False, None, None),
-    (5, 3, 5, 6, "incremental", "cdf", False, "spn", False, 5, True, False, 80, True, None, None),
-    (5, 3, 5, 6, "obs", "mean", False, "spn", False, 5, True, True, 80, False, None, None),
-    (5, [1, 2, 3], 5, 6, "obs", "mean", False, "spn", False, 5, True, True, 80, False, None, None),
-    (5, [1, 3], 5, 6, "obs", "mean", False, "spn", False, 5, True, True, 80, False, None, None),
+    (1, 3, 6, 8,'steps', None, None, False, "spn", True, 6, False, False, 80, False, None, None, None),
+    (5, 3, 5, 6,'steps', "incremental", "cdf", False, "spn", False, 5, False, False, 80, False, None, None, None),
+    (5, 3, 5, 6,'steps', "obs", "mean", False, "spn", False, 5, False, False, 80, False, None, None, None),
+    (1, 3, 6, 8,'steps', None, None, False, "spn", True, 6, False, True, 80, False, None, None, None),
+    (5, 3, 5, 6,'steps', "incremental", "cdf", False, "spn", False, 5, True, False, 80, True, None, None, None),
+    (5, 3, 5, 6,'steps', "obs", "mean", False, "spn", False, 5, True, True, 80, False, None, None, None),
+    (5, [1, 2, 3], 5, 6,'steps', "obs", "mean", False, "spn", False, 5, True, True, 80, False, None, None, None),
+    (5, [1, 3], 5, 6,'steps', "obs", "mean", False, "spn", False, 5, True, True, 80, False, None, None, None),
     # Test the usage of a max_mask_rim in the mask_kwargs
-    (1, 3, 6, 8, None, None, False, "bps", True, 6, False, False, 80, False, None, 40),
-    (5, 3, 5, 6, "obs", "mean", False, "bps", False, 5, False, False, 80, False, None, 40),
-    (5, 3, 5, 6, "incremental", "cdf", False, "bps", False, 5, False, False, 80, False, None, 25),
-    (5, 3, 5, 6, "incremental", "cdf", False, "bps", False, 5, False, False, 80, False, None, 40),
-    (5, 3, 5, 6, "incremental", "cdf", False, "bps", False, 5, False, False, 80, False, None, 60),
+    (1, 3, 6, 8,'steps', None, None, False, "bps", True, 6, False, False, 80, False, None, 40, None),
+    (5, 3, 5, 6,'steps', "obs", "mean", False, "bps", False, 5, False, False, 80, False, None, 40, None),
+    (5, 3, 5, 6,'steps', "incremental", "cdf", False, "bps", False, 5, False, False, 80, False, None, 25, None),
+    (5, 3, 5, 6,'steps', "incremental", "cdf", False, "bps", False, 5, False, False, 80, False, None, 40, None),
+    (5, 3, 5, 6,'steps', "incremental", "cdf", False, "bps", False, 5, False, False, 80, False, None, 60, None),
+    #Test the externally provided nowcast
+    (1, 10, 1, 8,'external_nowcast_det', None, None, False, "spn", True, 1, False, False, 0, False, None, None, None),
+    (1, 10, 1, 8,'external_nowcast_det', "incremental", None, False, "bps", True, 1, False, False, 0, False, None, None, None),
+    (1, 10, 1, 8,'external_nowcast_det', "incremental", None, False, "spn", True, 1, False, False, 80, False, None, None, None),
+    (1, 10, 1, 8,'external_nowcast_det', "incremental", None, False, "bps", True, 1, True, False, 0, False, None, None, None),
+    (1, 10, 1, 8,'external_nowcast_det', "incremental", None, False, "spn", True, 1, False, True, 0, False, None, None, None),
+    (1, 10, 1, 8,'external_nowcast_det', "incremental", None, False, "bps", True, 1, True, True, 0, False, None, None, None),
+    (1, 10, 1, 8,'external_nowcast_det', "incremental", "cdf", False, "spn", True, 1, False, False, 0, True, None, None, None),
+    (1, 10, 1, 8,'external_nowcast_det', "incremental", "obs", False, "bps", True, 1, False, False, 0, False, None, None, None),
+    (1, 10, 1, 8,'external_nowcast_det', "incremental", None, False, "bps", True, 1, False, False, 0, False, None, None, 5),
+    (5, 10, 5, 8,'external_nowcast_ens', "incremental", None, False, "spn", True, 5, False, False, 0, False, None, None, None),
+    (5, 10, 5, 8,'external_nowcast_ens', "incremental", None, False, "spn", True, 5, False, False, 0, False, None, None, None),
+    (1, 10, 5, 8,'external_nowcast_ens', "incremental", None, False, "spn", True, 5, False, False, 0, False, None, None, None),
+    (1, 10, 1, 8,'external_nowcast_ens', "incremental", "cdf", False, "bps", True, 5, False, False, 0, False, None, None, None),
+    (5, 10, 1, 8,'external_nowcast_ens', "incremental", "obs", False, "spn", True, 5, False, False, 0, False, None, None, None),
+    (1, 10, 5, 8,'external_nowcast_ens', "incremental", "cdf", False, "bps", True, 5, False, False, 0, False, None, None, 5)
 ]
+
 # fmt:on
 
 steps_arg_names = (
@@ -62,6 +82,7 @@ steps_arg_names = (
     "timesteps",
     "n_ens_members",
     "n_cascade_levels",
+    "nowcasting_method",
     "mask_method",
     "probmatching_method",
     "blend_nwp_members",
@@ -74,6 +95,7 @@ steps_arg_names = (
     "resample_distribution",
     "vel_pert_method",
     "max_mask_rim",
+    "timestep_start_full_nwp_weight",
 )
 
 
@@ -83,6 +105,7 @@ def test_steps_blending(
     timesteps,
     n_ens_members,
     n_cascade_levels,
+    nowcasting_method,
     mask_method,
     probmatching_method,
     blend_nwp_members,
@@ -95,6 +118,7 @@ def test_steps_blending(
     resample_distribution,
     vel_pert_method,
     max_mask_rim,
+    timestep_start_full_nwp_weight,
 ):
     pytest.importorskip("cv2")
 
@@ -156,6 +180,67 @@ def test_steps_blending(
         radar_precip[2, 30:155, 39 + 1 * 2] = 1.0
         radar_precip[2, 30:155, 40 + 1 * 3] = 0.5
         radar_precip[2, 30:155, 41 + 1 * 3] = 0.1
+
+    precip_nowcast = np.zeros((n_ens_members, last_timestep + 1, 200, 200))
+
+    if nowcasting_method == "external_nowcast_ens":
+        nowcasting_method = "external_nowcast"
+        for n_ens_member in range(n_ens_members):
+            for i in range(precip_nowcast.shape[1]):
+                precip_nowcast[
+                    n_ens_member, i, 30:165, 30 + 1 * (i + 1) * n_ens_member
+                ] = 0.1
+                precip_nowcast[
+                    n_ens_member, i, 30:165, 31 + 1 * (i + 1) * n_ens_member
+                ] = 0.5
+                precip_nowcast[
+                    n_ens_member, i, 30:165, 32 + 1 * (i + 1) * n_ens_member
+                ] = 0.5
+                precip_nowcast[
+                    n_ens_member, i, 30:165, 33 + 1 * (i + 1) * n_ens_member
+                ] = 5.0
+                precip_nowcast[
+                    n_ens_member, i, 30:165, 34 + 1 * (i + 1) * n_ens_member
+                ] = 5.0
+                precip_nowcast[
+                    n_ens_member, i, 30:165, 35 + 1 * (i + 1) * n_ens_member
+                ] = 4.5
+                precip_nowcast[
+                    n_ens_member, i, 30:165, 36 + 1 * (i + 1) * n_ens_member
+                ] = 4.5
+                precip_nowcast[
+                    n_ens_member, i, 30:165, 37 + 1 * (i + 1) * n_ens_member
+                ] = 4.0
+                precip_nowcast[
+                    n_ens_member, i, 30:165, 38 + 1 * (i + 1) * n_ens_member
+                ] = 1.0
+                precip_nowcast[
+                    n_ens_member, i, 30:165, 39 + 1 * (i + 1) * n_ens_member
+                ] = 0.5
+                precip_nowcast[
+                    n_ens_member, i, 30:165, 40 + 1 * (i + 1) * n_ens_member
+                ] = 0.5
+                precip_nowcast[
+                    n_ens_member, i, 30:165, 41 + 1 * (i + 1) * n_ens_member
+                ] = 0.1
+        if n_ens_members < expected_n_ens_members:
+            n_ens_members = expected_n_ens_members
+
+    elif nowcasting_method == "external_nowcast_det":
+        nowcasting_method = "external_nowcast"
+        for i in range(precip_nowcast.shape[1]):
+            precip_nowcast[0, i, 30:165, 30 + 1 * i] = 0.1
+            precip_nowcast[0, i, 30:165, 31 + 1 * i] = 0.5
+            precip_nowcast[0, i, 30:165, 32 + 1 * i] = 0.5
+            precip_nowcast[0, i, 30:165, 33 + 1 * i] = 5.0
+            precip_nowcast[0, i, 30:165, 34 + 1 * i] = 5.0
+            precip_nowcast[0, i, 30:165, 35 + 1 * i] = 4.5
+            precip_nowcast[0, i, 30:165, 36 + 1 * i] = 4.5
+            precip_nowcast[0, i, 30:165, 37 + 1 * i] = 4.0
+            precip_nowcast[0, i, 30:165, 38 + 1 * i] = 1.0
+            precip_nowcast[0, i, 30:165, 39 + 1 * i] = 0.5
+            precip_nowcast[0, i, 30:165, 40 + 1 * i] = 0.5
+            precip_nowcast[0, i, 30:165, 41 + 1 * i] = 0.1
 
     metadata = dict()
     metadata["unit"] = "mm"
@@ -272,7 +357,7 @@ def test_steps_blending(
     assert nwp_velocity.ndim == 5, "nwp_velocity must be a five-dimensional array"
 
     ###
-    # The nowcasting
+    # The blending
     ###
     precip_forecast = blending.steps.forecast(
         precip=radar_precip,
@@ -295,6 +380,7 @@ def test_steps_blending(
         ar_order=2,
         vel_pert_method=vel_pert_method,
         weights_method=weights_method,
+        timestep_start_full_nwp_weight=timestep_start_full_nwp_weight,
         conditional=False,
         probmatching_method=probmatching_method,
         mask_method=mask_method,
@@ -317,9 +403,11 @@ def test_steps_blending(
     )
 
     assert precip_forecast.ndim == 4, "Wrong amount of dimensions in forecast output"
+
     assert (
         precip_forecast.shape[0] == expected_n_ens_members
     ), "Wrong amount of output ensemble members in forecast output"
+
     assert (
         precip_forecast.shape[1] == n_timesteps
     ), "Wrong amount of output time steps in forecast output"
@@ -330,9 +418,11 @@ def test_steps_blending(
     assert (
         precip_forecast.ndim == 4
     ), "Wrong amount of dimensions in converted forecast output"
+
     assert (
         precip_forecast.shape[0] == expected_n_ens_members
     ), "Wrong amount of output ensemble members in converted forecast output"
+
     assert (
         precip_forecast.shape[1] == n_timesteps
     ), "Wrong amount of output time steps in converted forecast output"
