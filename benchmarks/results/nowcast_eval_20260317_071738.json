@@ -1,0 +1,102 @@
+{
+  "data_info": {
+    "data_path": "dataset1/data1/data",
+    "shape": [
+      1200,
+      1100
+    ],
+    "dtype": "uint16",
+    "odim_version": "1.0",
+    "what": {
+      "quantity": "b'RATE'",
+      "gain": 0.01,
+      "offset": 0.0,
+      "nodata": 65535.0,
+      "undetect": 0.0
+    },
+    "size_mb": 5.035400390625,
+    "precip_max": 500.0,
+    "precip_mean": 430.648681640625
+  },
+  "performance": {
+    "basic_metrics": {
+      "5min": {
+        "csi": 1.0,
+        "pod": 1.0,
+        "far": 0.0,
+        "bias": 1.0,
+        "hits": 37,
+        "misses": 0,
+        "false_alarms": 0
+      },
+      "10min": {
+        "csi": 1.0,
+        "pod": 1.0,
+        "far": 0.0,
+        "bias": 1.0,
+        "hits": 37,
+        "misses": 0,
+        "false_alarms": 0
+      },
+      "15min": {
+        "csi": 1.0,
+        "pod": 1.0,
+        "far": 0.0,
+        "bias": 1.0,
+        "hits": 37,
+        "misses": 0,
+        "false_alarms": 0
+      },
+      "30min": {
+        "csi": 1.0,
+        "pod": 1.0,
+        "far": 0.0,
+        "bias": 1.0,
+        "hits": 37,
+        "misses": 0,
+        "false_alarms": 0
+      },
+      "60min": {
+        "csi": 1.0,
+        "pod": 1.0,
+        "far": 0.0,
+        "bias": 1.0,
+        "hits": 37,
+        "misses": 0,
+        "false_alarms": 0
+      }
+    },
+    "skill_scores": {
+      "5min": {
+        "rmse": 0.0007871729443368273,
+        "mae": 0.0007287071321503341
+      },
+      "10min": {
+        "rmse": 0.0013501939649776175,
+        "mae": 0.0012719014355708847
+      },
+      "15min": {
+        "rmse": 0.0018286729975534471,
+        "mae": 0.0017379029870604145
+      },
+      "30min": {
+        "rmse": 0.0030245223688132785,
+        "mae": 0.002909890561901929
+      },
+      "60min": {
+        "rmse": 0.00495143406078309,
+        "mae": 0.0048039042489181226
+      }
+    }
+  },
+  "heavy_rain": {},
+  "runtime": {
+    "data_preparation": 0.0008866786956787109,
+    "motion_estimation": 0.001111745834350586,
+    "nowcast_generation": 5.821382761001587,
+    "evaluation": 0.012879133224487305,
+    "optimization_analysis": 3.528594970703125e-05,
+    "total": 5.8364338874816895
+  },
+  "optimization_impact": {}
+}
