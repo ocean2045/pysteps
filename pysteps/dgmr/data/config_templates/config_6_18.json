@@ -1,0 +1,8 @@
+{
+  "input_frames": 6,
+  "output_frames": 18,
+  "description": "6帧输入（1小时历史）+ 18帧输出（3小时预报）",
+  "oversample_heavy": true,
+  "heavy_precipitation_threshold": 5.0,
+  "oversample_ratio": 3.0
+}
